@@ -1,0 +1,12 @@
+*{
+  z-index: 1;
+}
+swiper-container{
+  z-index: 1;
+}
+
+swiper-container .swiper-button-prev {
+  width: 10px;
+  height: 10px;
+  background: #fe3331;
+}

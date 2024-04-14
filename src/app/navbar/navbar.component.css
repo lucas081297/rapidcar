@@ -1,0 +1,31 @@
+@keyframes navEnter {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes navOut {
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+}
+
+.navEnter{
+  animation: navEnter 1s ease 0s 1 normal forwards;
+}
+
+.navOut{
+  animation: navOut 2s ease 0s 1 normal forwards;
+}

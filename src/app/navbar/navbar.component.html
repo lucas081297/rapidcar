@@ -1,0 +1,22 @@
+<div [id]="nav" #navEvent [ngClass]="!nav ? 'fixed pt-3 top-0 left-0 z-10 sm:hidden' : 'fixed z-10 top-0 left-0 w-[calc(100vw/3)] h-screen shadow-sm z-1 navEnter bg-[#b5e550]'">
+  <div class="grid grid-cols-flow">
+    <button (click)="toggleNav()" [ngClass]="!nav? 'w-8' : 'hidden'" >
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 6H20M7 12H17M9 18H15" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+    <div></div>
+    <button (click)="toggleNav()" [ngClass]="nav? 'w-8 justify-self-end' : 'hidden'" >
+      <svg viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 21.32L21 3.32001" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 3.32001L21 21.32" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+  </div>
+  <ul [ngClass]="nav ? '' : 'hidden' ">
+    <li (click)="nav=false" [routerLink]="[link.routerLink]" class="h-8 my-4 flex items-center hover:bg-white cursor-pointer" *ngFor="let link of navLinks">
+      <img class="h-5 ms-1 me-2" [src]='link.src' alt=""/>
+      <span>{{ link.routeName }}</span>
+    </li>
+  </ul>
+</div>

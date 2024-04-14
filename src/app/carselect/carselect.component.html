@@ -1,0 +1,29 @@
+<section [ngClass]="blur ? 'blur' : '' " class="container h-[calc(100vh-60px)] w-screen text-center content-center bg-[#809c13] text-black font-MontSerrat lg:px-[200px] md:ps-[80px] md:pe-[10px]">
+  <div class="grid grid-cols-3 mb-[3rem] mx-1 font-Tilt-Neon ">
+    <span id="1" (click)="toggleCarClass(1)" class="border rounded border-white hover:bg-[#b5e550] hover:text-black cursor-pointer md:text-2xl sm:text-sm font-semibold">Economico</span>
+    <span id="2" (click)="toggleCarClass(2)" class="border rounded border-white hover:bg-[#b5e550] hover:text-black cursor-pointer md:text-2xl sm:text-sm font-semibold">Executivo</span>
+    <span id="3" (click)="toggleCarClass(3)" class="border rounded border-white hover:bg-[#b5e550] hover:text-black cursor-pointer md:text-2xl sm:text-sm font-semibold">SUV</span>
+  </div>
+      <swiper-container #swiper a11y="true" effect="slide" mousewheel="true" navigation="true" mousewheel-force-to-axis="true" class='max-h-[calc(100vh-300px)]'>
+          <swiper-slide *ngFor="let car of cars" [ngClass]="car.class==carClass ? '' : 'hidden'" >
+            <div class="grid grid-cols-[75%_25%]">
+              <div class="grid grid-flow-rows">
+                <div class="text-xl font-medium">{{ car.name }}</div>
+                <div class="justify-self-end self-end">
+                  <img class="min-w-[263px]" src={{car.img}} alt="">
+                </div>
+                <div></div>
+              </div>
+              <div class="grid grid-flow-rows gap-12 content-center justify-start text-base">
+                <div class="border-b border-white">Câmbio {{car.automatic ? 'Automático' : 'Manual'}}</div>
+                <div class="border-b border-white">{{car.fuel == 'gas' ? 'Gasolina | Alcool' : car.fuel === 'diesel' ? 'Diesel' : 'Elétrico'}}</div>
+                <div class="border-b border-white">Economia de {{car.economy}}
+                  <span [ngClass]="car.fuel != 'electric' ? '' : 'hidden'">Km/L</span>
+                  <span [ngClass]="car.fuel == 'electric' ? '' : 'hidden'">Km/Carga</span>
+                </div>
+                <div class="border-b border-white" [ngClass]="car.cam? '':'hidden'">Câmera de Ré</div>
+              </div>
+            </div>
+        </swiper-slide>
+    </swiper-container>
+</section>
