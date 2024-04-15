@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CommonModule } from '@angular/common';
 import { AlugarComponent } from './pages/alugar/alugar.component';
 import { AboutComponent } from './pages/about/about.component';
+import { StoresComponent } from './pages/stores/stores.component';
 
 register()
 
@@ -22,7 +23,8 @@ register()
     
     HomeComponent,
     AlugarComponent,
-    AboutComponent
+    AboutComponent,
+    StoresComponent
   ],
   imports: [
     BrowserModule,

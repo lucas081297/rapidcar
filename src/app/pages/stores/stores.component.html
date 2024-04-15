@@ -1,0 +1,22 @@
+<section class="container mx-auto flex flex-col justify-center items-center pt-[60px] h-[calc(100vh)]">
+  <div class="text-center text-white mb-2 w-full self-start">SELECIONE O ESTADO</div>
+  <div class="w-full flex justify-center items-center">
+    <select (change)="changeState($event.target)" class="w-1/6 h-[30px] text-center text-white bg-amber-950 border rounded-xl">
+      <option [value]="state" *ngFor="let state of storesStates">{{state}}</option>
+    </select>
+  </div>
+  <div class="w-[97%] sm:w-4/5 grid grid-flow-row border border-white rounded bg-amber-950 text-white max-[400px]:text-[0.5rem] min-[400px]:text-sm">
+
+    <div *ngFor="let store of stores">
+      <div *ngIf="selectState == store.state" class="grid grid-cols-[15%_50%_15%_20%] auto-cols-min items-center border-b">
+        <div class="p-3 lg:w-1/2">
+          <img src="https://www.svgrepo.com/show/513552/location-pin.svg" alt="">
+        </div>
+        <div class="ps-2">{{store.street}} - {{ store.number }}, {{ store.district }}, {{ store.city }}/{{ store.state }}</div>
+        <div class="p-3 lg:w-1/2"><img src="https://www.svgrepo.com/show/513538/phone-handle.svg" alt=""></div>
+        <div><a [href]="'tel:+' + store.tel">{{store.tel}}</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
