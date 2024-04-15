@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { AlugarComponent } from './pages/alugar/alugar.component';
 import { AboutComponent } from './pages/about/about.component';
 import { StoresComponent } from './pages/stores/stores.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 register()
 
@@ -24,7 +25,8 @@ register()
     HomeComponent,
     AlugarComponent,
     AboutComponent,
-    StoresComponent
+    StoresComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
